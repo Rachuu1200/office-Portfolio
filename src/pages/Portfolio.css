@@ -1,0 +1,113 @@
+/* ===== Portfolio Section ===== */
+.portfolio-section {
+  min-height: 100vh;
+  padding: 100px 20px;
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.portfolio-section.dark {
+  background: #111;
+}
+
+/* ===== Container ===== */
+.portfolio-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* ===== Heading ===== */
+.portfolio-container h1 {
+  font-size: 3rem;
+  color: #ff3c00;
+  margin-bottom: 15px;
+}
+
+.portfolio-container h1::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #ff3c00;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.portfolio-subtitle {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 60px;
+}
+
+.portfolio-section.dark .portfolio-subtitle {
+  color: #ccc;
+}
+
+/* ===== Grid ===== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* ===== Card ===== */
+.portfolio-card {
+  background: #f9f9f9;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.portfolio-section.dark .portfolio-card {
+  background: #1a1a1a;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Image ===== */
+.portfolio-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* ===== Info ===== */
+.portfolio-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.portfolio-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.portfolio-section.dark .portfolio-info h3 {
+  color: #fff;
+}
+
+.portfolio-info p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.portfolio-section.dark .portfolio-info p {
+  color: #ccc;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .portfolio-container h1 {
+    font-size: 2.2rem;
+  }
+
+  .portfolio-image img {
+    height: 180px;
+  }
+}
