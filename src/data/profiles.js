@@ -103,7 +103,7 @@ export const profiles = {
     description:
       "Creative visual artist specializing in videography, video editing, photo editing, and graphic design. Passionate about storytelling through powerful visuals.",
     subtitle: "Who am I?",
-    image: shusilImg, // ✅ Correct reference
+    image: shusilImg, 
     cv: "/cv/shusil.pdf",
     about: [
       "Hello! I'm Shusil Bandari, a creative Videographer, Video Editor, Photo Editor, and Graphic Designer.",

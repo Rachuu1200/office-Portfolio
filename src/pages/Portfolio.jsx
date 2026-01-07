@@ -1,11 +1,13 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 import { profiles } from "../data/profiles";
 import "./Portfolio.css";
 
-const Portfolio = ({ darkMode }) => {
+const Portfolio = () => {
+  const { darkMode } = useOutletContext();
   const { id } = useParams();
   const person = profiles?.[id];
+
 
   if (!person || !Array.isArray(person.portfolio)) {
     return <h2 style={{ padding: "2rem" }}>No projects yet.</h2>;

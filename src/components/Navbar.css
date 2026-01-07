@@ -1,4 +1,11 @@
 /* ===============================
+   Root Variables
+================================ */
+:root {
+  --primary: #ff6a00;
+}
+
+/* ===============================
    Navbar Container
 ================================ */
 .navbar {
@@ -31,12 +38,12 @@
 .logo {
   font-size: 22px;
   font-weight: 600;
-  text-decoration: none;
+  cursor: pointer;
   color: inherit;
 }
 
 .logo span {
-  color: var(--primary, #ff6a00);
+  color: var(--primary);
 }
 
 .logo:hover {
@@ -83,20 +90,39 @@
   list-style: none;
 }
 
-/* 🔥 IMPORTANT FIX */
-.nav-links li a,
-.nav-links li a:visited,
-.nav-links li a:active {
-  color: inherit;
-  text-decoration: none;
+/* Nav Item */
+.nav-links li span {
+  cursor: pointer;
   font-weight: 500;
+  color: inherit;
+  padding: 6px 10px; /* larger click area */
+  border-radius: 6px;
+  position: relative;
   transition: color 0.3s ease;
 }
 
 /* Hover + Active */
-.nav-links li a:hover,
-.nav-links li a.active {
-  color: var(--primary, #ff6a00);
+.nav-links li span:hover,
+.nav-links li span.active {
+  color: var(--primary);
+}
+
+/* Underline Animation */
+.nav-links li span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links li span:hover::after,
+.nav-links li span.active::after {
+  width: 100%;
+  left: 0;
 }
 
 /* ===============================
@@ -148,9 +174,20 @@
     text-align: center;
     padding: 15px 0;
   }
+
+  /* Mobile Hover */
+  .nav-links li span::after {
+    display: none;
+  }
+
+  .nav-links li span:hover {
+    background-color: rgba(255, 106, 0, 0.12);
+  }
 }
 
-/* Smooth transition everywhere */
+/* ===============================
+   Smooth Transition
+================================ */
 .navbar * {
   transition: color 0.3s ease, background-color 0.3s ease;
 }

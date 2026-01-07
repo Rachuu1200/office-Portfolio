@@ -1,0 +1,16 @@
+:root {
+  --bg-color: #ffffff;
+  --section-bg: #f8f8f8;
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --text-color: #222222;
+  --text-muted: #555555;
+  --primary: #ff6a00;
+}
+
+.app.dark {
+  --bg-color: #0f0f0f;
+  --section-bg: #121212;
+  --card-bg: rgba(20, 20, 20, 0.85);
+  --text-color: #ffffff;
+  --text-muted: #cccccc;
+}

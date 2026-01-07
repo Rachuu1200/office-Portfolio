@@ -1,16 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useOutletContext  } from "react-router-dom";
 import { profiles } from "../data/profiles";
+import Team from "./Team";
+import Skills from "./Skills";
+import Portfolio from "./Portfolio";
+import About from "./About";
+import Contact from "./Contact";
+
 import "./Profile.css";
 
-const Profile = ({ darkMode }) => {
+
+
+const Profile = () => {
+  const { darkMode } = useOutletContext();
   const { id } = useParams();
-  const person = profiles?.[id]; // ✅ SAFE ACCESS
+
+ 
+  const person = profiles?.[id];
+  
 
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    if (!person || !Array.isArray(person.roles)) return;
+    if (!person?.roles?.length) return;
 
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % person.roles.length);
@@ -19,37 +31,63 @@ const Profile = ({ darkMode }) => {
     return () => clearInterval(interval);
   }, [person]);
 
-  // ✅ GUARD RENDER
   if (!person) {
     return <h2 style={{ padding: "2rem" }}>Profile Not Found</h2>;
   }
 
   return (
-    <div className={`hero ${darkMode ? "dark" : ""}`}>
-      <div className="hero-content">
-        <div className="text">
-          <h4>Hello, I'm</h4>
-          <h1>{person.name}</h1>
+    <>
+      {/* ================= HERO / PROFILE ================= */}
+      <section id="profile" className={`hero ${darkMode ? "dark" : ""}`}>
+        <div className="hero-content">
+          <div className="text">
+            <h4>Hello, I'm</h4>
+            <h1>{person.name}</h1>
 
-          {Array.isArray(person.roles) && person.roles.length > 0 && (
             <h2 className="animated-text">
               And I'm a <span>{person.roles[index]}</span>
             </h2>
-          )}
 
-          {person.description && <p>{person.description}</p>}
+            <p>{person.description}</p>
 
-          <a href={person.cv} download>
-            <button className="btn">Download CV</button>
-          </a>
+            {person.cv && (
+              <a href={person.cv} download>
+                <button className="btn">Download CV</button>
+              </a>
+            )}
+          </div>
+
+          <div className="image-wrapper">
+            <div className="glow"></div>
+            <img src={person.image} alt={person.name} />
+          </div>
         </div>
+      </section>
 
-        <div className="image-wrapper">
-          <div className="glow"></div>
-          <img src={person.image} alt={person.name} />
-        </div>
-      </div>
-    </div>
+      {/* ================= SKILLS ================= */}
+      <section id="skills">
+        <Skills person={person} darkMode={darkMode} />
+      </section>
+
+      {/* ================= PORTFOLIO ================= */}
+      <section id="portfolio">
+        <Portfolio person={person} darkMode={darkMode} />
+      </section>
+
+      {/* ================= ABOUT ================= */}
+      <section id="about">
+        <About person={person} darkMode={darkMode} />
+      </section>
+
+      {/* ================= CONTACT ================= */}
+      <section id="contact">
+        <Contact person={person} darkMode={darkMode} />
+      </section>
+       {/* ================= ABOUT ================= */}
+      <section id="team">
+        <Team person={person} darkMode={darkMode} />
+      </section>
+    </>
   );
 };
 

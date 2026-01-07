@@ -1,27 +1,34 @@
 import React, { useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = ({ darkMode, toggleTheme }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { id } = useParams();
+  const [active, setActive] = useState("home");
 
-  const links = id
-    ? [
-        { path: `/${id}`, name: "Profile" },
-        { path: `/${id}/skills`, name: "Skills" },
-        { path: `/${id}/portfolio`, name: "Portfolio" },
-        { path: `/${id}/about`, name: "About" },
-        { path: `/${id}/contact`, name: "Contact" },
-      ]
-    : [{ path: "/", name: "Team" }];
+  const links = [
+    { id: "home", name: "Home" },     
+    { id: "skills", name: "Skills" },
+    { id: "portfolio", name: "Portfolio" },
+    { id: "about", name: "About" },
+    { id: "contact", name: "Contact" },
+    { id: "team", name: "Team" },
+  ];
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    section.scrollIntoView({ behavior: "smooth" });
+    setActive(id);
+    setMenuOpen(false);
+  };
 
   return (
     <nav className={`navbar ${darkMode ? "dark" : "light"}`}>
       {/* Logo */}
-      <NavLink to={id ? `/${id}` : "/"} className="logo">
-        Rachana<span>Mandal</span>
-      </NavLink>
+      <div className="logo" onClick={() => scrollToSection("home")}>
+        Sindhuli<span>Bazar.com</span>
+      </div>
 
       {/* Hamburger */}
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
@@ -32,15 +39,14 @@ const Navbar = ({ darkMode, toggleTheme }) => {
 
       {/* Nav Links */}
       <ul className={`nav-links ${menuOpen ? "mobile-open" : ""}`}>
-        {links.map((link, i) => (
-          <li key={i} onClick={() => setMenuOpen(false)}>
-            <NavLink
-              to={link.path}
-              end={link.name === "Home"}
-              className={({ isActive }) => (isActive ? "active" : "")}
+        {links.map((link) => (
+          <li key={link.id}>
+            <span
+              className={active === link.id ? "active" : ""}
+              onClick={() => scrollToSection(link.id)}
             >
               {link.name}
-            </NavLink>
+            </span>
           </li>
         ))}
 

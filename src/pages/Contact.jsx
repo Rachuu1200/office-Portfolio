@@ -1,9 +1,10 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 import { profiles } from "../data/profiles";
 import "./Contact.css";
 
-const Contact = ({ darkMode }) => {
+const Contact = () => {
+  const { darkMode } = useOutletContext();
   const { id } = useParams();
   const profile = profiles[id];
 
