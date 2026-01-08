@@ -15,7 +15,7 @@ const Footer = ({ darkMode }) => {
     <div className="footer-container">
   {/* Brand / About */}
   <div className="footer-col brand">
-    <h2>{person.name.replace(" ", "")}</h2>
+    <h2>{person.name.replace(" " , " ")}</h2>
     <p>Hello! I'm {person.name}, team member of NLT Productions</p>
   </div>
 

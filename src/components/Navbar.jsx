@@ -12,11 +12,12 @@ const Navbar = ({ darkMode, toggleTheme }) => {
   const links = location.pathname.startsWith("/team/")
     ? [
         { id: "home", name: "Home" },
-   
+
         { id: "skills", name: "Skills" },
         { id: "portfolio", name: "Portfolio" },
-             { id: "about", name: "About" },
+        { id: "about", name: "About" },
         { id: "contact", name: "Contact" },
+         { id: "education", name: "Education" },
       ]
     : [{ id: "team", name: "Team" }]; // Only team link on home page
 
