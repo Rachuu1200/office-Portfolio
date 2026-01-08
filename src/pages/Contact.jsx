@@ -1,6 +1,7 @@
 import React from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 import { profiles } from "../data/profiles";
+import { Github, Linkedin, Instagram, Mail } from "lucide-react";
 import "./Contact.css";
 
 const Contact = () => {
@@ -47,11 +48,46 @@ const Contact = () => {
           <p>✉️ {email}</p>
 
           <div className="social-icons">
-            {social.github && <a href={social.github}>🐙</a>}
-            {social.linkedin && <a href={social.linkedin}>💼</a>}
-            {social.instagram && <a href={social.instagram}>📸</a>}
-            {social.email && <a href={`mailto:${social.email}`}>✉️</a>}
-          </div>
+  {social?.github && (
+    <a
+      href={social.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub"
+    >
+      <Github size={20} />
+    </a>
+  )}
+
+  {social?.linkedin && (
+    <a
+      href={social.linkedin}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn"
+    >
+      <Linkedin size={20} />
+    </a>
+  )}
+
+  {social?.instagram && (
+    <a
+      href={social.instagram}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+    >
+      <Instagram size={20} />
+    </a>
+  )}
+
+  {social?.email && (
+    <a href={social.email} aria-label="Email">
+      <Mail size={20} />
+    </a>
+  )}
+</div>
+
         </div>
       </div>
     </div>

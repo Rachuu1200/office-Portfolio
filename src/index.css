@@ -6,6 +6,15 @@
   --text-muted: #555555;
   --primary: #ff6a00;
 }
+/* Reset default browser spacing */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 .app.dark {
   --bg-color: #0f0f0f;

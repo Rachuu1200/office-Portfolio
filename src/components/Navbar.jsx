@@ -1,18 +1,24 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = ({ darkMode, toggleTheme }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState("home");
 
-  const links = [
-    { id: "home", name: "Home" },     
-    { id: "skills", name: "Skills" },
-    { id: "portfolio", name: "Portfolio" },
-    { id: "about", name: "About" },
-    { id: "contact", name: "Contact" },
-    { id: "team", name: "Team" },
-  ];
+  const location = useLocation();
+
+  // Links depending on route
+  const links = location.pathname.startsWith("/team/")
+    ? [
+        { id: "home", name: "Home" },
+   
+        { id: "skills", name: "Skills" },
+        { id: "portfolio", name: "Portfolio" },
+             { id: "about", name: "About" },
+        { id: "contact", name: "Contact" },
+      ]
+    : [{ id: "team", name: "Team" }]; // Only team link on home page
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -20,7 +26,7 @@ const Navbar = ({ darkMode, toggleTheme }) => {
 
     section.scrollIntoView({ behavior: "smooth" });
     setActive(id);
-    setMenuOpen(false);
+    setMenuOpen(false); // Close menu after click
   };
 
   return (
