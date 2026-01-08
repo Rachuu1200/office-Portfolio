@@ -14,31 +14,28 @@ const About = ({ darkMode }) => {
       <div className="about-container">
         {/* Text */}
         <div className="about-text">
-          <h1>About {person.name}</h1>
+          <h1>
+            About <br />
+            {person.name}
+          </h1>
 
-          {person.about.map((text, i) => (
+          {person.about?.map((text, i) => (
             <p key={i}>{text}</p>
           ))}
 
           <div className="about-buttons">
-            <button className="btn">
-              See Projects
-            </button>
-
-            <button className="btn">
-              Contact Me
-            </button>
+            <button className="btn">See Projects</button>
+            <button className="btn">Contact Me</button>
           </div>
         </div>
-     
 
-      {/* Image */}
-      <div className="about-image">
-        <div className="image-glow"></div>
-        <img src={person.image} alt={person.name} />
+        {/* Image */}
+        <div className="about-image">
+          <div className="image-glow"></div>
+          <img src={person.image} alt={person.name} />
+        </div>
       </div>
-    </div>
-    </section >
+    </section>
   );
 };
 
