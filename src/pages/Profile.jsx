@@ -8,6 +8,7 @@ import About from "./About";
 import Contact from "./Contact";
 
 import "./Profile.css";
+import Education from "./Education";
 
 const Profile = () => {
   const { darkMode } = useOutletContext();
@@ -82,6 +83,12 @@ const Profile = () => {
       {/* ================= CONTACT ================= */}
       <section id="contact">
         <Contact person={person} darkMode={darkMode} />
+      </section>
+
+
+      {/* ================= EDUCATION ================= */}
+      <section id="education">
+        <Education person={person} darkMode={darkMode} />
       </section>
     </>
   );

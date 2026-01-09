@@ -31,6 +31,50 @@ export const profiles = {
       { name: "Photoshop", level: 70 },
       { name: "Graphic Design", level: 75 }
     ],
+      education: [
+    {
+      institute: "Sindhuli Community Technical Institute",
+      degree: "B.Tech IT",
+      field: "Information Technology",
+      year: "Last Semester",
+      location: "Laxmipur, Siraha-4",
+      notes: "Currently studying, Frontend Developer at Nepal Leadership Technology"
+    },
+    {
+      institute: "Rajarshi Janak Campus, Janakpur",
+      degree: "High School / College Pass",
+      field: "Science / IT",
+      year: "Completed",
+      location: "Janakpur, Nepal",
+      notes: "Passed successfully, member of Nepal Leadership Technology"
+    }
+  ],
+  experience: [
+    {
+      company: "Nepal Leadership Technology",
+      role: "Frontend Developer",
+      duration: "May 2022 – Present",
+      industry: "Information Technology / Software Development",
+      responsibilities: [
+        "Developing and maintaining responsive web applications",
+        "Implementing UI/UX designs into functional frontend code",
+        "Collaborating with designers and backend developers",
+        "Ensuring cross-browser compatibility and performance optimization",
+        "Participating in code reviews and agile workflows"
+      ]
+    },
+    {
+      company: "Sindhuli Community Technical Institute",
+      role: "Intern / Student Project Developer",
+      duration: "Jan 2023 – Present",
+      industry: "Education / IT",
+      responsibilities: [
+        "Assisting in developing student projects and assignments",
+        "Learning and applying modern web technologies",
+        "Supporting faculty with technology-related tasks"
+      ]
+    }
+  ],
     portfolio: [
       {
         title: "Personal Portfolio Website",
@@ -301,53 +345,63 @@ export const profiles = {
       { name: "Content Strategy", level: 80 }
     ],
 
-    experience: [
-      {
-        company: "NLT Productions",
-        role: "Founder & CEO / Content Creator",
-        duration: "May 2022 – Present",
-        industry: "Advertising / Marketing / PR",
-        responsibilities: [
-          "Managing photo and video production projects",
-          "Handling pre-production, shooting, and post-production",
-          "Overseeing creative direction and branding",
-          "Client communication and project execution"
-        ]
-      },
-      {
-        company: "Nepal Leadership Technology Pvt. Ltd.",
-        role: "Executive Director",
-        duration: "January 2020 – Present",
-        industry: "Information Technology (Software)",
-        responsibilities: [
-          "Providing overall leadership and company direction",
-          "Making key corporate decisions",
-          "Overseeing software development projects",
-          "Supporting team growth and innovation"
-        ]
-      },
-      {
-        company: "Sindhuli Community Technical Institute",
-        role: "B.Ed. IT Faculty Member",
-        duration: "October 2023 – Present",
-        industry: "Education / IT",
-        responsibilities: [
-          "Teaching IT fundamentals and applied technology",
-          "Guiding students in practical IT usage"
-        ]
-      },
-      {
-        company: "Sindhuli College of Hotel Management",
-        role: "IT Assistant",
-        duration: "April 2022 – Present",
-        industry: "Education / Media",
-        responsibilities: [
-          "Managing website and social media content",
-          "SEO research and implementation",
-          "System and software maintenance"
-        ]
-      }
-    ],
+    // ✅ ADDED EDUCATION (NEW)
+  education: [
+    {
+      year: "December 2021",
+      institute: "Southwestern University PHINMA – Cebu",
+      degree: "Bachelor’s / College Degree",
+      field: "Computer Science / Information Technology"
+    }
+  ],
+
+  experience: [
+    {
+      company: "NLT Productions",
+      role: "Founder & CEO / Content Creator",
+      duration: "May 2022 – Present",
+      industry: "Advertising / Marketing / PR",
+      responsibilities: [
+        "Managing photo and video production projects",
+        "Handling pre-production, shooting, and post-production",
+        "Overseeing creative direction and branding",
+        "Client communication and project execution"
+      ]
+    },
+    {
+      company: "Nepal Leadership Technology Pvt. Ltd.",
+      role: "Executive Director",
+      duration: "January 2020 – Present",
+      industry: "Information Technology (Software)",
+      responsibilities: [
+        "Providing overall leadership and company direction",
+        "Making key corporate decisions",
+        "Overseeing software development projects",
+        "Supporting team growth and innovation"
+      ]
+    },
+    {
+      company: "Sindhuli Community Technical Institute",
+      role: "B.Ed. IT Faculty Member",
+      duration: "October 2023 – Present",
+      industry: "Education / IT",
+      responsibilities: [
+        "Teaching IT fundamentals and applied technology",
+        "Guiding students in practical IT usage"
+      ]
+    },
+    {
+      company: "Sindhuli College of Hotel Management",
+      role: "IT Assistant",
+      duration: "April 2022 – Present",
+      industry: "Education / Media",
+      responsibilities: [
+        "Managing website and social media content",
+        "SEO research and implementation",
+        "System and software maintenance"
+      ]
+    }
+  ],
 
     portfolio: [
       {
