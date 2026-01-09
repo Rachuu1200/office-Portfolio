@@ -110,29 +110,42 @@
 /* ===============================
    MOBILE (<768px)
 ================================ */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .footer {
     padding: 50px 20px 20px;
   }
 
   .footer-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "brand brand brand"
+      "quick services contact";
     gap: 30px;
   }
 
-  .footer-row {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+  .footer-col.brand {
+    grid-area: brand;
   }
 
-  /* Truncate only Quick Links */
-  .footer-col.quick-links li {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .footer-col.quick-links {
+    grid-area: quick;
+  }
+
+  .footer-col.services {
+    grid-area: services;
+  }
+
+  .footer-col.contact {
+    grid-area: contact;
+  }
+
+  .footer-col.services li,
+  .footer-col.contact li {
+    white-space: normal;
   }
 }
+
 
 /* ===============================
    LARGE DESKTOP
