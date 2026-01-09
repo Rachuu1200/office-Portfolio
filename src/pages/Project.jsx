@@ -1,9 +1,9 @@
 import React from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 import { profiles } from "../data/profiles";
-import "./Portfolio.css";
+import "./Project.css";
 
-const Portfolio = () => {
+const Project = () => {
   const { darkMode } = useOutletContext();
   const { id } = useParams();
   const person = profiles?.[id];
@@ -40,4 +40,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Project;

@@ -14,7 +14,7 @@ const Navbar = ({ darkMode, toggleTheme }) => {
         { id: "home", name: "Home" },
 
         { id: "skills", name: "Skills" },
-        { id: "portfolio", name: "Portfolio" },
+        { id: "project", name: "Project" },
         { id: "about", name: "About" },
         { id: "contact", name: "Contact" },
          { id: "education", name: "Education" },

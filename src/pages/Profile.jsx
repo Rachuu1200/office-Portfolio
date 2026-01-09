@@ -3,7 +3,7 @@ import { useParams, useOutletContext } from "react-router-dom";
 import { profiles } from "../data/profiles";
 
 import Skills from "./Skills";
-import Portfolio from "./Portfolio";
+import Project from "./Project";
 import About from "./About";
 import Contact from "./Contact";
 
@@ -72,7 +72,7 @@ const Profile = () => {
 
       {/* ================= PORTFOLIO ================= */}
       <section id="portfolio">
-        <Portfolio person={person} darkMode={darkMode} />
+        <Project person={person} darkMode={darkMode} />
       </section>
 
       {/* ================= ABOUT ================= */}
