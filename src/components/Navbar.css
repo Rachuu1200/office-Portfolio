@@ -143,44 +143,60 @@
   background: rgba(255, 106, 0, 0.12);
 }
 
-
+/* ===============================
+   Mobile Responsive
+================================ */
 @media (max-width: 768px) {
-  .footer {
-    padding: 50px 20px 20px;
+  .hamburger {
+    display: flex;
   }
 
-  .footer-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:
-      "brand brand brand"
-      "quick services contact";
-    gap: 30px;
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
   }
 
-  .footer-col.brand {
-    grid-area: brand;
+  /* Open Menu */
+  .nav-links.mobile-open {
+    max-height: 500px;
+    opacity: 1;
   }
 
-  .footer-col.quick-links {
-    grid-area: quick;
+  /* Mobile background */
+  .navbar.light .nav-links {
+    background-color: #ffffff;
   }
 
-  .footer-col.services {
-    grid-area: services;
+  .navbar.dark .nav-links {
+    background-color: #111111;
   }
 
-  .footer-col.contact {
-    grid-area: contact;
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
   }
 
-  .footer-col.services li,
-  .footer-col.contact li {
-    white-space: normal;
+  /* Mobile Hover */
+  .nav-links li a::after {
+    display: none;
+  }
+
+  .nav-links li a:hover {
+    background-color: rgba(255, 106, 0, 0.12);
+  }
+
+  .theme-toggle {
+    margin-bottom: 10px;
   }
 }
-
-
 
 /* ===============================
    Smooth Transition
